@@ -27,5 +27,7 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/friends', ['uses' => 'UsersController@friends']);
+    Route::get('/home', ['uses' => 'UsersController@home']);
+    Route::get('/profile/timeline', ['uses' => '\App\Profile\Timeline\ProfileFriendsController\ProfileTimelineController@index']);
+    Route::get('/profile/friends', ['uses' => '\App\Profile\Friends\Controllers\ProfileFriendsController@index']);
 });

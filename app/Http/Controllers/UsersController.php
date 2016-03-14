@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Entities\User;
 
 class UsersController extends Controller
 {
@@ -83,11 +82,5 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function friends()
-    {
-        $friends = User::all();
-        return view('users.friends')->with(compact('friends'));
     }
 }
