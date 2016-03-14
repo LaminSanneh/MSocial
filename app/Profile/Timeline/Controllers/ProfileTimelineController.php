@@ -9,5 +9,8 @@ use App\Http\Controllers\Controller;
 
 class ProfileTimelineController extends Controller
 {
-    //
+    public function index()
+    {
+        return view('profile.timeline');
+    }
 }

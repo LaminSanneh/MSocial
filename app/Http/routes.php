@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -27,7 +23,16 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/home', ['uses' => 'UsersController@home']);
-    Route::get('/profile/timeline', ['uses' => '\App\Profile\Timeline\ProfileFriendsController\ProfileTimelineController@index']);
+    Route::get('/', function () {
+        return redirect()->to('/home');
+    });
+    Route::get('/auth/register', ['uses' => 'Auth\AuthController@getRegister']);
+    Route::get('/profile/timeline', ['uses' => '\App\Profile\Timeline\Controllers\ProfileTimelineController@index']);
     Route::get('/profile/friends', ['uses' => '\App\Profile\Friends\Controllers\ProfileFriendsController@index']);
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
