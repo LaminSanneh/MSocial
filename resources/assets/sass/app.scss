@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.friends-list__friend{
+    border: 1px solid #e9eaed;
+    margin: 0 0 13px 13px;
+}
+
+.friends-list__fullname{
+    display: inline-block;
+}
+
+.friends-list__avatar{
+    display: inline-block;
+    max-width: 100px;
+}
