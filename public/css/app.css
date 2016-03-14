@@ -5749,6 +5749,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  background-color: #e9eaed; }
+
 .friends-list__friend {
   border: 1px solid #e9eaed;
   margin: 0 0 13px 13px; }
@@ -5759,5 +5762,10 @@ button.close {
 .friends-list__avatar {
   display: inline-block;
   max-width: 100px; }
+
+.statusses-list__status {
+  background-color: #FFFFFF;
+  margin: 0 0 13px 13px;
+  padding: 12px 12px; }
 
 /*# sourceMappingURL=app.css.map */

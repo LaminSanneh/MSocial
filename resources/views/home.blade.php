@@ -1,17 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-                </div>
+    <div class="col-md-3">
+        <p>
+            Menus
+        </p>
+    </div>
+    <div class="col-md-5">
+        <div class="statusses-list">
+            @foreach($statuses as $status)
+            <div class="statusses-list__status">
+                {{ $status->content }}
             </div>
+            @endforeach
         </div>
+    </div>
+    <div class="col-md-4">
+
     </div>
 </div>
 @endsection
